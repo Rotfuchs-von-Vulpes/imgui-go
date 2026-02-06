@@ -1,3 +1,4 @@
+//go:build required
 // +build required
 
 package imgui
@@ -14,7 +15,7 @@ package imgui
 
 import (
 	// Prevent go tooling from stripping out the c source files.
-	_ "github.com/inkyblackness/imgui-go/v4/imgui"
-	_ "github.com/inkyblackness/imgui-go/v4/wrapper"
-	_ "github.com/inkyblackness/imgui-go/v4/imgui/misc/freetype"
+	_ "github.com/Rotfuchs-von-Vulpes/imgui-go/v4/imgui"
+	_ "github.com/Rotfuchs-von-Vulpes/imgui-go/v4/imgui/misc/freetype"
+	_ "github.com/Rotfuchs-von-Vulpes/imgui-go/v4/wrapper"
 )
