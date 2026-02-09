@@ -1,1 +1,3 @@
 package cgowrapper
+
+import "C"
