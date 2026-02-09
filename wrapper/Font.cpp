@@ -1,6 +1,7 @@
 #include "ConfiguredImGui.h"
 
 #include "Font.h"
+#include "WrapperConverter.h"
 
 void iggPushFont(IggFont handle)
 {

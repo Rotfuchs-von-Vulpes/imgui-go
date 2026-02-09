@@ -303,16 +303,6 @@ const (
 	ItemFlagsDefault ItemFlags = 0
 )
 
-// PushItemFlag changes flags in the existing options for the next items until PopItemFlag() is called.
-func PushItemFlag(options ItemFlags, enabled bool) {
-	C.iggPushItemFlag(C.int(options), castBool(enabled))
-}
-
-// PopItemFlag restores flags that were changed by the previous call to PushItemFlag().
-func PopItemFlag() {
-	C.iggPopItemFlag()
-}
-
 // CalcItemWidth returns the width of items given pushed settings and current cursor position.
 func CalcItemWidth() float32 {
 	return float32(C.iggCalcItemWidth())

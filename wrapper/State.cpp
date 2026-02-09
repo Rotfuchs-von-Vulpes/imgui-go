@@ -3,11 +3,6 @@
 #include "State.h"
 #include "WrapperConverter.h"
 
-void iggClearActiveID(void)
-{
-   ImGui::ClearActiveID();
-}
-
 IggBool iggIsItemClicked()
 {
    return ImGui::IsItemClicked() ? 1 : 0;
@@ -85,22 +80,25 @@ IggBool iggIsWindowHovered(int flags)
 
 int iggGetKeyIndex(int key)
 {
-    return ImGui::GetKeyIndex(key);
+    return ImGui::GetKeyIndex(static_cast<ImGuiKey>(key));
 }
 
 IggBool iggIsKeyDown(int key)
 {
-   return ImGui::IsKeyDown(key);
+   return ImGui::IsKeyDown(static_cast<ImGuiKey>(key));
 }
 
 IggBool iggIsKeyPressed(int key, IggBool repeat)
 {
-   return ImGui::IsKeyPressed(key, repeat);
+   return ImGui::IsKeyPressed(
+      static_cast<ImGuiKey>(key),
+      static_cast<bool>(repeat)
+   );
 }
 
 IggBool iggIsKeyReleased(int key)
 {
-   return ImGui::IsKeyReleased(key);
+   return ImGui::IsKeyReleased(static_cast<ImGuiKey>(key));
 }
 
 IggBool iggIsMouseDown(int button)
@@ -115,7 +113,7 @@ IggBool iggIsAnyMouseDown()
 
 IggBool iggIsMouseClicked(int button, IggBool repeat)
 {
-   return ImGui::IsMouseClicked(button, repeat);
+   return ImGui::IsMouseClicked(static_cast<ImGuiMouseButton>(button), static_cast<bool>(repeat));
 }
 
 IggBool iggIsMouseReleased(int button)

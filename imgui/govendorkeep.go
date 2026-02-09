@@ -1,1 +1,3 @@
 package cgoimgui
+
+import "C"
